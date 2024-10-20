@@ -12,8 +12,8 @@ let stompClient = null;
 let username = null;
 
 let colors = [
-    '#2196F3', '#32c787', '#00BCD4', '#ff5652',
-    '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
+    '#2196F3', '#024CAA', '#00BCD4', '#ff5652',
+    '#091057', '#ff85af', '#FF9800', '#39bbb0'
 ];
 
 const connect = (event) => {

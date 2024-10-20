@@ -17,7 +17,7 @@ body {
   font-size: 1rem;
   line-height: 1.58;
   color: #333;
-  background-color: #f4f4f4;
+  background-color: #f1f1f1;
   height: 100%;
 }
 
@@ -36,6 +36,7 @@ body {
   min-height: 38px;
   font-size: 15px;
   border: 1px solid #c8c8c8;
+  border-radius: 4px;
 }
 
 .form-group {
@@ -73,6 +74,8 @@ button {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   min-height: 38px;
+  text-transform: uppercase;
+  border-radius: 4px;
 }
 
 button.default {
@@ -82,15 +85,16 @@ button.default {
 }
 
 button.primary {
-  background-color: #6db33f;
+  background-color: #EC8305;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
 }
 
 button.accent {
-  background-color: #6db33f;
+  background-color: #EC8305;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
+
 }
 
 #username-page {
@@ -115,6 +119,7 @@ button.accent {
   right: 0;
   margin: 0 auto;
   margin-top: -160px;
+  border-radius: 8px;
 }
 
 .username-page-container .username-submit {
@@ -125,6 +130,7 @@ button.accent {
 #chat-page {
   position: relative;
   height: 100%;
+  border-radius: 8px;
 }
 
 .chat-container {
@@ -285,3 +291,4 @@ button.accent {
       font-size: 1.1em;
   }
 }
+
