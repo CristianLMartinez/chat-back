@@ -6,22 +6,28 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
-@Configuration
 @EnableWebSocketMessageBroker
+@Configuration
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws")
-                .setAllowedOriginPatterns("*")
-                .setAllowedOrigins("http://localhost:5500", "http://localhost:5173/" )
-                .withSockJS();
+
+        // access link would be : ('http://localhost:8080/ms');
+        registry.addEndpoint("/ws").setAllowedOriginPatterns("*").withSockJS();
+
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.setApplicationDestinationPrefixes("/app");
-        registry.enableSimpleBroker("/topic");
-    }
 
+        // this is the web broker endpoint that manages how message are delivered
+        registry.enableSimpleBroker("/chatroom", "/user");
+
+        // it is a prefix used by the client to send message to the server
+        registry.setApplicationDestinationPrefixes("/app");
+
+        // for private user
+        registry.setUserDestinationPrefix("/user");
+    }
 }
